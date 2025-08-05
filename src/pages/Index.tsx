@@ -43,14 +43,6 @@ const Index = () => {
 
   const projectGallery = [
     {
-      category: "Фундаменты",
-      images: [
-        { src: "/img/dc902c79-174d-4654-ac21-6f5429e724db.jpg", title: "Котлован под фундамент" },
-        { src: "/img/c4ca2897-e839-44f9-b6be-814e37fd73b9.jpg", title: "Армирование фундамента" },
-        { src: "/img/e594ee06-3ba7-4be6-84c7-bc02cad797fb.jpg", title: "Блочный фундамент" }
-      ]
-    },
-    {
       category: "Строительство",
       images: [
         { src: "/img/f8914d58-61a5-4305-9401-dd167e7d37f3.jpg", title: "Кирпичная кладка" },
