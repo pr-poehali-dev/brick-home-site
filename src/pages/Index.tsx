@@ -41,6 +41,33 @@ const Index = () => {
     { name: "Михаил В.", text: "Профессиональная команда. Все сроки соблюдены.", rating: 5 }
   ];
 
+  const projectGallery = [
+    {
+      category: "Фундаменты",
+      images: [
+        { src: "/img/dc902c79-174d-4654-ac21-6f5429e724db.jpg", title: "Котлован под фундамент" },
+        { src: "/img/c4ca2897-e839-44f9-b6be-814e37fd73b9.jpg", title: "Армирование фундамента" },
+        { src: "/img/e594ee06-3ba7-4be6-84c7-bc02cad797fb.jpg", title: "Блочный фундамент" }
+      ]
+    },
+    {
+      category: "Строительство",
+      images: [
+        { src: "/img/f8914d58-61a5-4305-9401-dd167e7d37f3.jpg", title: "Кирпичная кладка" },
+        { src: "/img/3a7845ed-ba29-4e02-a536-24be93c510c6.jpg", title: "Блочное строительство" },
+        { src: "/img/aba35ac6-d46b-4f95-a9b6-928c7876a471.jpg", title: "Коттедж в процессе" }
+      ]
+    },
+    {
+      category: "Готовые дома",
+      images: [
+        { src: "/img/cd7885d0-e69a-46dd-8bef-c2dcfc9e606d.jpg", title: "Кирпичный дом" },
+        { src: "/img/10ee182d-70cc-4f00-bf07-be0c0648323d.jpg", title: "Элитный коттедж" },
+        { src: "/img/6c2713eb-d497-4958-9769-dd0c7ddf3432.jpg", title: "Двухэтажный коттедж" }
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header with WhatsApp */}
@@ -150,6 +177,34 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Наши проекты</h2>
+          {projectGallery.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="mb-12">
+              <h3 className="text-2xl font-bold text-center mb-8 text-primary">{category.category}</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {category.images.map((image, imageIndex) => (
+                  <Card key={imageIndex} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={image.src} 
+                        alt={image.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold text-gray-900 text-center">{image.title}</h4>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
